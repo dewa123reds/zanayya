@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Zanayya! 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff477e;
+            --secondary-color: #ff7eb3;
+            --text-color: #2b2b2b;
+            --bg-gradient-1: #ff9a9e;
+            --bg-gradient-2: #fecfef;
+            --bg-gradient-3: #a1c4fd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+            background: var(--bg-gradient-1);
+        }
+
+        .bg-waves {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(45deg, var(--bg-gradient-1), var(--bg-gradient-2), var(--bg-gradient-3));
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .wave {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            width: 250vw;
+            height: 250vw;
+            margin-left: -125vw;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 45%;
+            animation: drift 12s infinite linear;
+        }
+
+        .wave:nth-child(2) {
+            background: rgba(255, 255, 255, 0.15);
+            animation: drift 18s infinite linear;
+            border-radius: 40%;
+        }
+
+        .wave:nth-child(3) {
+            background: rgba(255, 71, 126, 0.05);
+            animation: drift 24s infinite linear;
+            border-radius: 43%;
+        }
+
+        @keyframes drift {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            perspective: 1000px;
+        }
+
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.15) 100%);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-top: 1px solid rgba(255, 255, 255, 0.9);
+            border-left: 1px solid rgba(255, 255, 255, 0.9);
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 40px;
+            padding: 50px 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.5);
+            max-width: 850px;
+            width: 95%;
+        }
+
+        h1, h2 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary-color);
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+        }
+
+        h1 {
+            font-size: 5.5rem;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #444;
+            font-weight: 400;
+        }
+
+        .btn-next {
+            display: inline-block;
+            padding: 16px 45px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(255, 71, 126, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-next:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 25px rgba(255, 71, 126, 0.5);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.7);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.05);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .glass-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .photo-slot {
+            width: 220px;
+            height: 280px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 12px 12px 50px 12px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 1);
+        }
+
+        .photo-slot:nth-child(1) { transform: rotate(-5deg) translateY(10px); }
+        .photo-slot:nth-child(2) { transform: rotate(4deg) translateY(-15px); }
+        .photo-slot:nth-child(3) { transform: rotate(-3deg) translateY(5px); }
+
+        .photo-slot:hover {
+            transform: scale(1.15) rotate(0deg) translateY(-10px) !important;
+            z-index: 10;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+        }
+
+        .photo-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            background-color: #e0e0e0;
+        }
+
+        .photo-slot p {
+            position: absolute;
+            bottom: 12px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            font-family: 'Dancing Script', cursive;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .wish-list {
+            text-align: left;
+            list-style: none;
+            margin: 0 auto 30px auto;
+            max-width: 600px;
+        }
+
+        .wish-list li {
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+            padding-left: 35px;
+            position: relative;
+        }
+
+        .wish-list li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #secret-msg {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 15px;
+            border: 1px dashed var(--primary-color);
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .hidden {
+            opacity: 0;
+            filter: blur(20px);
+            transform: translateY(120px) scale(0.8) rotateX(-10deg);
+            transition: all 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transform-style: preserve-3d;
+        }
+
+        .show {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0) scale(1) rotateX(0);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3.8rem; }
+            h2 { font-size: 2.8rem; }
+            .glass-panel { padding: 40px 20px; border-radius: 30px; }
+            .photo-slot { width: 180px; height: 230px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-waves">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <section id="page1">
+        <div class="hidden glass-panel">
+            <div class="subtitle">It's a special day for</div>
+            <h1>Zanayya</h1>
+            <p>Hari ini bumi menyelesaikan satu putaran lagi mengelilingi matahari sejak kamu lahir. Scroll ke bawah yuk, ada sesuatu buat kamu! 🎈</p>
+            <a href="#page2" class="btn-next">Mulai Perjalanan 🚀</a>
+        </div>
+    </section>
+
+    <section id="page2">
+        <div class="hidden glass-panel">
+            <h2>Halo Sayang...</h2>
+            <p>Selamat ulang tahun! 🎉 Aku gak jago merangkai kata, tapi website kecil ini aku buat khusus untuk merayakan eksistensi manusia paling luar biasa yang pernah aku kenal. Iya, itu kamu.</p>
+            <p>Makasih ya udah selalu jadi versi terbaik dari dirimu, dan makasih udah kasih warna yang beda di kehidupanku.</p>
+            <a href="#page3" class="btn-next">Lanjut Baca 📖</a>
+        </div>
+    </section>
+
+    <section id="page3">
+        <div class="hidden glass-panel">
+            <h2>3 Hal Tentangmu</h2>
+            <p>Kalau disuruh milih apa yang paling aku suka dari kamu, mungkin 3 hal ini ada di urutan teratas:</p>
+            
+            <div class="card-grid">
+                <div class="glass-card">
+                    <h3>😊 Senyummu</h3>
+                    <p style="font-size: 1rem; margin-bottom: 0;">Obat paling manjur kalau aku lagi capek. Tolong senyum terus ya!</p>
+                </div>
+                <div class="glass-card">
+                    <h3>🗣️ Ceritamu</h3>
+                    <p style="font-size: 1rem; margin-bottom: 0;">Gak peduli sereceh apa ceritamu, aku selalu suka dengerinnya.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>💖 Hatimu</h3>
+                    <p style="font-size: 1rem; margin-bottom: 0;">Kamu itu baik, tulus, dan peduli. Jangan biarin dunia ngerubah itu ya.</p>
+                </div>
+            </div>
+
+            <a href="#page4" class="btn-next">Lihat Sesuatu 🙈</a>
+        </div>
+    </section>
+
+    <section id="page4">
+        <div class="hidden glass-panel">
+            <h2>Our Memories</h2>
+            <p>Beberapa momen yang berhasil ke-capture. Padahal aslinya jauh lebih banyak momen indah yang tersimpan di kepala.</p>
+            
+            <div class="gallery">
+                <div class="photo-slot">
+                    <img src="foto1.jpg" alt="Zanayya Cantik">
+                    <p>Si Cantik</p>
+                </div>
+                <div class="photo-slot">
+                    <img src="foto2.jpg" alt="Momen Lucu">
+                    <p>Random Moment</p>
+                </div>
+                <div class="photo-slot">
+                    <img src="foto3.jpg" alt="Kita Berdua">
+                    <p>You & Me ❤️</p>
+                </div>
+            </div>
+
+            <a href="#page5" class="btn-next">Lanjut ke Doa 🤲</a>
+        </div>
+    </section>
+
+    <section id="page5">
+        <div class="hidden glass-panel">
+            <h2>Harapanku Untukmu</h2>
+            <ul class="wish-list">
+                <li>Semoga kamu dikelilingi oleh orang-orang yang sayang tulus sama kamu.</li>
+                <li>Semoga apa yang lagi kamu usahain sekarang, perlahan nemuin jalan terangnya.</li>
+                <li>Semoga sehat selalu, jangan sering-sering begadang atau telat makan!</li>
+                <li>Semoga di usia yang baru ini, kebahagiaanmu berkali-kali lipat lebih banyak dari sedihnya.</li>
+            </ul>
+            <a href="#page6" class="btn-next">Aminn... Lanjut ✨</a>
+        </div>
+    </section>
+
+    <section id="page6">
+        <div class="hidden glass-panel">
+            <h2>You Should Know</h2>
+            <p>Mungkin kamu kadang merasa kurang, merasa capek, atau overthinking. Tapi aku mau kamu tau...</p>
+            <div class="glass-card" style="margin: 0 auto 30px auto; max-width: 600px;">
+                <p style="font-weight: 500; font-style: italic; margin-bottom: 0;">"Di mata orang yang tepat, kamu selalu cukup. Dan buat aku, kamu lebih dari cukup, Nay."</p>
+            </div>
+            <a href="#page7" class="btn-next">Ada Tombol Misterius 🎁</a>
+        </div>
+    </section>
+
+    <section id="page7">
+        <div class="hidden glass-panel">
+            <h2>A Little Secret</h2>
+            <p>Aku nyimpen satu pesan terakhir khusus buat kamu di kotak ini. Coba klik tombol di bawah!</p>
+            
+            <button class="btn-next" onclick="bukaPesan()" id="btn-rahasia" style="background: #fff; color: var(--primary-color);">Buka Pesan Rahasia 💌</button>
+            
+            <div id="secret-msg">
+                <h3 style="color: var(--primary-color); margin-bottom: 10px; font-family: 'Dancing Script', cursive; font-size: 2rem;">I Love You!</h3>
+                <p style="margin-bottom: 0;">Bukan cuma hari ini aja, tapi kemarin, besok, dan hari-hari seterusnya. Thank you for existing, Zanayya. ❤️</p>
+            </div>
+            
+            <br><br>
+            <a href="#page8" class="btn-next" style="display: none;" id="btn-ke-akhir">Menuju Halaman Akhir 🏁</a>
+        </div>
+    </section>
+
+    <section id="page8">
+        <div class="hidden glass-panel">
+            <h1 style="font-size: 4rem;">Happy Birthday!</h1>
+            <p style="font-size: 1.3rem;">Once again, Happy Level Up Day, Zanayya! Selamat merayakan dirimu sendiri hari ini. Makan yang enak, senyum yang lebar!</p>
+            <p style="font-weight: 600; color: var(--primary-color);">From the one who adores you.</p>
+            <button class="btn-next" onclick="window.scrollTo(0,0)" style="margin-top: 20px;">Kembali ke Atas ⬆️</button>
+        </div>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+
+        function bukaPesan() {
+            document.getElementById('secret-msg').style.display = 'block';
+            document.getElementById('btn-rahasia').style.display = 'none';
+            document.getElementById('btn-ke-akhir').style.display = 'inline-block';
+        }
+    </script>
+</body>
+</html>
